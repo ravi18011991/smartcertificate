@@ -8,10 +8,11 @@ You should have received a copy of the GNU General Public License along with thi
 
 Description
 
-Smart Certificate activities are used to generate PDF certificates for students in a course.Smart certificate consist of borders, watermarks, seals, signatures, outcomes, grades etc
-to create effective certificate.Smart Certificate content like -grade,signature,outcomes,border,seals etc will never change again after first download of certificate.Smart Certifificate 
-allow user to share certificate on their linkedin profile by just clicking the Add Linkedin Button.
-
+The Smart Certificate module is used to generate PDF certificates for students in a course.Smart certificate consist of borders, watermarks, seals, signatures, outcomes, grades etc
+to create effective certificate.Smart Certificate contain contents like -grade, signature, outcomes, border, seals etc that doesn’t change again after the first download of certificate.
+In case mistakes are found in student certificate then students can request Administrator to allow them download latest updated certificate.
+Smart Certifificate allow user to share certificate on their linkedin profile by just clicking the ‘Add Linkedin’ Button.
+ 
 Requirements
 ------------
 
