@@ -6,34 +6,36 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/.
 
-Description
+Description of Smart Certificate ->
 
 The Smart Certificate module is used to generate PDF certificates for students in a course.Smart certificate consist of borders, watermarks, seals, signatures, outcomes, grades etc
 to create effective certificate.Smart Certificate contain contents like -grade, signature, outcomes, border, seals etc that doesn’t change again after the first download of certificate.
 In case mistakes are found in student certificate then students can request Administrator to allow them download latest updated certificate.
 Smart Certifificate allow user to share certificate on their linkedin profile by just clicking the ‘Add Linkedin’ Button.
  
-Requirements
+Requirements ->
 ------------
 
 Moodle 2.9 +
 
-Installation
+Installation -> 
 ------------
-1- Unpack the "moodle-mod_smartcertificate.zip" and rename that unzipped folder to "smartcertificate" and place this folder into 'mod' directory of moodle. The file structure for Smartcertificate would be something like. [site-root]/mod/smartcertificate
+1- Unpack the "moodle-mod_smartcertificate.zip" and rename that unzipped folder to "smartcertificate" and place this folder into 'mod' directory of moodle. 
+   The file structure for Smartcertificate    would be something like. [site-root]/mod/smartcertificate
 
 Visit Settings > Site Administration > Notifications, You should find the module's tables successfully created
 
-Dependencies
+Dependencies ->
 ------------
 
-2- To run "smartcertificate" module you need to add another plugin named "smartcertificatesearch" found at "https://github.com/vidyamantra/moodle-tool_smartcertificatesearch". Locate this folder 'smartcertificatesearch' into 'admin/tool' directory of moodle
+2- To run "smartcertificate" module you need to add another plugin named "smartcertificatesearch" found at "https://github.com/ravi18011991/smartcertificatesearch". 
+   Locate this folder 'smartcertificatesearch' into 'admin/tool' directory of moodle
 
 File structure for Smartcertificatesearch would be. [site-root]/admin/tool/smartcertificatesearch
 
 3- Visit the admin notification page to trigger the database installation by [site-root] > Site administration > Notifications
 
-Smart Certificate Setting
+Smart Certificate Setting ->
 
 Smart Certificate Administration: 
 
@@ -63,19 +65,19 @@ Step 1 - Click on given linkedin link.
 
 Step 2 - Select institute name from linkedin link first input box and then copy it and paste into Manage institution first text box namely enter company name.
 
-Step 3- Enter Certification name in linkedin link second input box namely Certification name. 
+Step 3-  Enter Certification name in linkedin link second input box namely Certification name. 
 
-Step 4- After filling of linkedin link form. You must click on create button of linkedin link form.
+Step 4-  After filling of linkedin link form. You must click on create button of linkedin link form.
 
-Step 5 - After click on create button we can see in below three text box is popup.then You copy only Complete URL text box and paste into manage institution complete 
-         Url text box and then click on save button.
-Step 6- Similarly you can enter many Institute record in Smart Certificate database for provide Facility to make shareable certificate on linkedin profile of many certification course   
-        certificate of particular institute.
-Step 7- After Filling Some record of manage institution form according to above instruction.Linkedin Option ready for usable. Now we can use linkedin functionality via Smart
-        Certificate setting.go to Smart Certificate setting-
+Step 5 - After click on create button we can see in below three text box is popup.then You copy only Complete URL text box and paste into manage institution 
+        complete Url text box and then click on save button.
+Step 6- Similarly you can enter many Institute record in Smart Certificate database for provide Facility to make shareable certificate on linkedin profile of many 
+        certification course certificate of particular institute.
+Step 7- After Filling Some record of manage institution form according to above instruction.Linkedin Option ready for usable. 
+        Now we can use linkedin functionality via Smart Certificate setting.go to Smart Certificate setting-
 
+Share with Linkedin:
 
-Share with Linkedin
 Click on checkbox to use linkedin functionality. If you are not interested for it then simply disable the checkbox.
 
 Select Institute:
@@ -94,7 +96,7 @@ License Number:
 
 Enter valid license number of your certification course
 
-Issue Options:
+Issue Options->
 
 Email Teachers:
 
@@ -113,13 +115,14 @@ Save Certificates:
 If save certificate setting is enabled then all certificates get stored in moodledata.
 
 Text Options:
-Text option of Smart Certificate provide facility for Admin and teacher to choose what text  be visible in pdf certificate such as-Print date, Date format,Print code, Print grade,Grade format etc.
+
+Text option of Smart Certificate provide facility for Admin and teacher to choose what text  be visible in pdf certificate such as-
+Print date, Date format,Print code, Print grade,Grade format etc.
 
 Design Options:
 
-Design option of Smart Certificate provide many design option to make good looking
-Certificate.Design option is-Certificate type, border image,border lines,water mark image,
-Signature image,logo seal etc.
+Design option of Smart Certificate provide many design option to make good looking Certificate.
+Design option is-Certificate type, border image,border lines,water mark image,Signature image,logo seal etc.
 
 Smart Certificate Search:
 
