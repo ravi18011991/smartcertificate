@@ -21,7 +21,7 @@ Moodle 2.9 +
 Installation -> 
 ------------
 1- Unpack the "moodle-mod_smartcertificate.zip" and rename that unzipped folder to "smartcertificate" and place this folder into 'mod' directory of moodle. 
-   The file structure for Smartcertificate    would be something like. [site-root]/mod/smartcertificate
+The file structure for Smartcertificate    would be something like. [site-root]/mod/smartcertificate
 
 Visit Settings > Site Administration > Notifications, You should find the module's tables successfully created
 
@@ -29,7 +29,7 @@ Dependencies ->
 ------------
 
 2- To run "smartcertificate" module you need to add another plugin named "smartcertificatesearch" found at "https://github.com/ravi18011991/smartcertificatesearch". 
-   Locate this folder 'smartcertificatesearch' into 'admin/tool' directory of moodle
+Locate this folder 'smartcertificatesearch' into 'admin/tool' directory of moodle
 
 File structure for Smartcertificatesearch would be. [site-root]/admin/tool/smartcertificatesearch
 
@@ -70,11 +70,13 @@ Step 3-  Enter Certification name in linkedin link second input box namely Certi
 Step 4-  After filling of linkedin link form. You must click on create button of linkedin link form.
 
 Step 5 - After click on create button we can see in below three text box is popup.then You copy only Complete URL text box and paste into manage institution 
-        complete Url text box and then click on save button.
+complete Url text box and then click on save button.
+
 Step 6- Similarly you can enter many Institute record in Smart Certificate database for provide Facility to make shareable certificate on linkedin profile of many 
-        certification course certificate of particular institute.
+certification course certificate of particular institute.
+
 Step 7- After Filling Some record of manage institution form according to above instruction.Linkedin Option ready for usable. 
-        Now we can use linkedin functionality via Smart Certificate setting.go to Smart Certificate setting-
+Now we can use linkedin functionality via Smart Certificate setting.go to Smart Certificate setting-
 
 Share with Linkedin:
 
