@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Handles viewing a smartcertificate
+ * Handles viewing a Smart Certificate
  *
  * @package    mod_smartcertificate
  * @copyright  Vidya Mantra EduSystems Pvt. Ltd.
