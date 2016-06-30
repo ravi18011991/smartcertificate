@@ -52,7 +52,7 @@ class mod_smartcertificate_mod_form extends moodleform_mod {
         $mform->addRule('name', null, 'required', null, 'client');
 
         $this->standard_intro_elements(get_string('intro', 'smartcertificate'));
-        // Linkedin option.
+        // Linkedin option Input Field.
         $comapnyname = smartcertificate_get_linkedin_instt();
         if (!empty($comapnyname)) {
 

@@ -59,7 +59,7 @@ Linkedin Option:
 ----------------
 Linkedin option is important feature of Smart certificate. Admin and teacher can use linkedin functionality as per their choice because it is optional. For using linkedin functionality
 First-you need to go to Manage institution page in admin settings, Manage Institution page can only be accessed by admin. In case of teacher, they can request admin to Manage Institution
-
+                                                                                                                                                                        
 Manage Institution:
 -------------------
 In manage institution page we can see one linkedin link and two textbox namely-company name and complete Url . Linkedin link is only helpful for fill company name and complete url.
