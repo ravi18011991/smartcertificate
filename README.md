@@ -17,7 +17,7 @@ Smart Certifificate allow user to share certificate on their linkedin profile by
 Requirements
 ------------
 
-Moodle 2.9 +
+Moodle 3.0 +
 
 Installation
 ------------

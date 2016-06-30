@@ -24,12 +24,12 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2016062701; // The current module version (Date: YYYYMMDDXX).
+$plugin->version   = 2016063000; // The current module version (Date: YYYYMMDDXX).
 $plugin->requires  = 2015051100; // Requires this Moodle version.
 $plugin->cron      = 0; // Period for cron to check this module (secs).
 $plugin->component = 'mod_smartcertificate';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = "2.9 (Build: 2015083101)"; // User-friendly version number.
-$plugin->dependencies = array('tool_smartcertificatesearch' => 2016052701);
+$plugin->release   = "1.0 (Build: 2016063000)"; // User-friendly version number.
+$plugin->dependencies = array('tool_smartcertificatesearch' => 2016063000);
 
 
