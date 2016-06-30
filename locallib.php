@@ -64,12 +64,12 @@ function smartcertificate_get_teachers($smartcertificate, $user, $course, $cm) {
         return array();
     }
     $teachers = array();
-    if (groups_get_activity_groupmode($cm, $course) == SEPARATEGROUPS) {   // Separate groups are being used
-        if ($groups = groups_get_all_groups($course->id, $user->id)) {  // Try to find all groups
+    if (groups_get_activity_groupmode($cm, $course) == SEPARATEGROUPS) {   // Separate groups are being used.
+        if ($groups = groups_get_all_groups($course->id, $user->id)) {  // Try to find all groups.
             foreach ($groups as $group) {
                 foreach ($potteachers as $t) {
                     if ($t->id == $user->id) {
-                        continue; // do not send self
+                        continue; // do not send self.
                     }
                     if (groups_is_member($group->id, $t->id)) {
                         $teachers[$t->id] = $t;
@@ -77,12 +77,12 @@ function smartcertificate_get_teachers($smartcertificate, $user, $course, $cm) {
                 }
             }
         } else {
-            // user not in group, try to find teachers without group
+            // user not in group, try to find teachers without group.
             foreach ($potteachers as $t) {
                 if ($t->id == $USER->id) {
-                    continue; // do not send self
+                    continue; // do not send self.
                 }
-                if (!groups_get_all_groups($course->id, $t->id)) { //ugly hack
+                if (!groups_get_all_groups($course->id, $t->id)) { //ugly hack.
                     $teachers[$t->id] = $t;
                 }
             }
@@ -90,7 +90,7 @@ function smartcertificate_get_teachers($smartcertificate, $user, $course, $cm) {
     } else {
         foreach ($potteachers as $t) {
             if ($t->id == $USER->id) {
-                continue; // do not send self
+                continue; // do not send self.
             }
             $teachers[$t->id] = $t;
         }
@@ -431,7 +431,7 @@ function get_smartcertificate_path($smartcertificate, $userid, $contextid, $cm, 
 function smartcertificate_get_issue($course, $user, $smartcertificate, $cm) {
     global $DB;
 
-    // Check if there is an issue already, should only ever be one
+    // Check if there is an issue already, should only ever be one.
     if ($certissue = $DB->get_record('smartcertificate_issues', array('userid' => $user->id, 'smartcertificateid' => $smartcertificate->id))) {
         return $certissue;
     }
