@@ -23,7 +23,6 @@
  */
 require_once("../../config.php");
 require_once("$CFG->dirroot/mod/smartcertificate/locallib.php");
-require_once("$CFG->dirroot/mod/smartcertificate/deprecatedlib.php");
 require_once("$CFG->libdir/pdflib.php");
 
 $id = required_param('id', PARAM_INT); // Course Module ID.
