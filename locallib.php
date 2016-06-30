@@ -535,7 +535,7 @@ function smartcertificate_get_issues($smartcertificateid, $sort = "ci.timecreate
     $page = (int) $page;
     $perpage = (int) $perpage;
 
-    // Get all the users that have smartcertificates issued, should only be one issue per user for a smartcertificate
+    // Get all the users that have smartcertificates issued, should only be one issue per user for a smartcertificate.
     $allparams = $conditionsparams + array('smartcertificateid' => $smartcertificateid);
 
     // The picture fields also include the name fields for the user.
