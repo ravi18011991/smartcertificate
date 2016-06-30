@@ -116,7 +116,8 @@ if (empty($action)) {
 
     if (has_capability('mod/smartcertificate:manage', $context)) {
         $numusers = count(smartcertificate_get_issues($smartcertificate->id, 'ci.timecreated ASC', $groupmode, $cm));
-        $url = html_writer::tag('a', get_string('viewsmartcertificateviews', 'smartcertificate', $numusers), array('href' => $CFG->wwwroot . '/mod/smartcertificate/report.php?id=' . $cm->id));
+        $url = html_writer::tag('a', get_string('viewsmartcertificateviews', 'smartcertificate', $numusers),
+            array('href' => $CFG->wwwroot . '/mod/smartcertificate/report.php?id=' . $cm->id));
         echo html_writer::tag('div', $url, array('class' => 'reportlink'));
     }
 
@@ -129,9 +130,9 @@ if (empty($action)) {
     }
     if ($smartcertificate->delivery == 0) {
         $str = get_string('openwindow', 'smartcertificate');
-    } elseif ($smartcertificate->delivery == 1) {
+    } if ($smartcertificate->delivery == 1) {
         $str = get_string('opendownload', 'smartcertificate');
-    } elseif ($smartcertificate->delivery == 2) {
+    } if ($smartcertificate->delivery == 2) {
         $str = get_string('openemail', 'smartcertificate');
     }
     echo html_writer::tag('p', $str, array('style' => 'text-align:center'));
@@ -151,7 +152,7 @@ if (empty($action)) {
 
     echo $OUTPUT->footer($course);
     exit;
-}   if(!empty($action)) {
+} else {
     if ($smartcertificate->delivery == 1) { // Forcely download, fetch certificate from moodledata.
         $path = get_smartcertificate_path($smartcertificate, $USER->id, $context->id, $cm, $course);
         $filename = "$COURSE->fullname.pdf";

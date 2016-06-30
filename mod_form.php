@@ -32,15 +32,13 @@ class mod_smartcertificate_mod_form extends moodleform_mod {
 
     public function definition() {
         global $CFG, $DB;
-
         $mform = & $this->_form;
-          if (isset($_GET['update'])) {
+        if (isset($_GET['update'])) {
             $id = required_param('update', PARAM_INT);
             $isdownload = smartcertificate_is_certificate_downloads($id);
             if (!empty($isdownload)) {
                 $msg = get_string('editnotice', 'smartcertificate');
-                $mform->addElement('static', 'notice', '',
-                    html_writer::tag('div', $msg, array('style' => 'text-align:justify', 'style' => 'background-color: #ffc')));
+                $mform->addElement('static', 'notice', '', html_writer::tag('div', $msg, array('style' => 'text-align:justify', 'style' => 'background-color: #ffc')));
             }
         }
         $mform->addElement('header', 'general', get_string('general', 'form'));

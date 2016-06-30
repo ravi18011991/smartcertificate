@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
-    $settings->add(new mod_smartcertificate_admin_setting_manage_institution('smartcertificate', 
+    $settings->add(new mod_smartcertificate_admin_setting_manage_institution('smartcertificate',
             get_string('manageinstitution', 'mod_smartcertificate'), get_string('manageinstitutiondesc', 'smartcertificate'), ''));
     $settings->add(new mod_smartcertificate_admin_setting_upload('smartcertificate/uploadimage',
         get_string('uploadimage', 'mod_smartcertificate'), get_string('uploadimagedesc', 'smartcertificate'), ''));

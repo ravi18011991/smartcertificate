@@ -100,7 +100,6 @@ function smartcertificate_get_teachers($smartcertificate, $user, $course, $cm) {
 }
 
 // Produce linkedin button.
-
 function smartcertificate_linkedin($smartcertificate, $cm) {
     global $DB, $OUTPUT;
 
@@ -118,9 +117,9 @@ function smartcertificate_linkedin($smartcertificate, $cm) {
             $certificationurl = preg_replace("/[\s_]/", "%2F", $smartcertificate->certificationurl);
             $license = preg_replace("/[\s_]/", "%20", $smartcertificate->licensenumber);
             $linkname = get_string('addlinkedin', 'smartcertificate');
-            $linkedin_link = new moodle_url('https://www.linkedin.com/profile/add' . $completeurl . 'CertificationName' . '=' . $certificationname . 
+            $linkedinlink = new moodle_url('https://www.linkedin.com/profile/add' . $completeurl . 'CertificationName' . '=' . $certificationname .
             '&pfCertificationUrl' . '=' . $certificationurl . '&pfCertStartDate' .'=' .date("Ym"). '&pfLicenseNo' . '=' . $license . '&pf' . $cm->id);
-            $button = new single_button($linkedin_link, $linkname);
+            $button = new single_button($linkedinlink, $linkname);
             $link = html_writer::tag('div', $OUTPUT->render($button), array('style' => 'text-align:center'));
             return $link;
         }
@@ -128,22 +127,20 @@ function smartcertificate_linkedin($smartcertificate, $cm) {
 }
 
 // Linkedin instt. delete record.
-
 function smartcertificate_linkedin_del_instt($delete, $companyname) {
     global $DB;
 
-    $result = $DB->get_record_sql('SELECT selectcompanyname FROM {smartcertificate} WHERE selectcompanyname = :selectcompanyname', array('selectcompanyname' => $companyname));
+    $result = $DB->get_record_sql('SELECT Count(*) selectcompanyname FROM {smartcertificate} WHERE selectcompanyname = :selectcompanyname', array('selectcompanyname' => $companyname));
     if (!empty($result)) {
         $DB->execute("UPDATE {smartcertificate} SET selectcompanyname = '',certificationname = '',certificationurl = '',licensenumber = '' ,linkedincheckbox = 0 WHERE selectcompanyname = '$companyname'");
     }
     $DB->delete_records('smartcertificate_linkedin', array('id' => $delete));
-                 
 }
-// Check which company is issued certificate.
 
+// Check which company is issued certificate.
 function smartcertificate_check_issued($companyname) {
     global $DB;
-    $result = $DB->get_record_sql('SELECT selectcompanyname FROM {smartcertificate} WHERE selectcompanyname = :selectcompanyname', array('selectcompanyname' => $companyname));
+    $result = $DB->get_record_sql('SELECT Count(*) selectcompanyname FROM {smartcertificate} WHERE selectcompanyname = :selectcompanyname', array('selectcompanyname' => $companyname));
     if (!empty($result)) {
         return $result->selectcompanyname;
     }
@@ -402,22 +399,20 @@ function get_smartcertificate_path($smartcertificate, $userid, $contextid, $cm, 
     global $CFG, $DB, $OUTPUT;
 
     $certrecord = $DB->get_record('smartcertificate_issues', array('userid' => $userid, 'smartcertificateid' => $smartcertificate->id));
-    
     $fs = get_file_storage();
-
     $component = 'mod_smartcertificate';
     $filearea = 'issue';
     $filepath = '/';
     $filename = smartcertificate_get_smartcertificate_filename($smartcertificate, $cm, $course) . '.pdf';
 
-    $result = $DB->get_record_sql('SELECT contenthash FROM {files} WHERE userid = :userid AND component = :component AND itemid = :itemid AND contextid = :contextid AND filename = :filename AND filearea = :filearea AND filepath = :filepath', array('userid' => $userid, 'component' => 'mod_smartcertificate', 'itemid' => $certrecord->id, 'contextid' => $contextid, 'filename' => $filename, 'filearea' => 'issue', 'filepath' => '/'));
+    $result = $DB->get_record_sql('SELECT contenthash FROM {files} WHERE userid = :userid AND component = :component AND itemid = :itemid AND contextid = :contextid AND filename = :filename AND filearea = :filearea AND filepath = :filepath',
+        array('userid' => $userid, 'component' => 'mod_smartcertificate', 'itemid' => $certrecord->id, 'contextid' => $contextid, 'filename' => $filename, 'filearea' => 'issue', 'filepath' => '/'));
+    foreach ($result as $record) {
 
-    foreach ($result as $res) {
+        $a = substr("$record", 0, -38);
+        $b = substr("$record", 2, -36);
 
-        $a = substr("$res", 0, -38);
-        $b = substr("$res", 2, -36);
-
-        $path = "$CFG->dataroot/filedir/$a/$b/$res";
+        $path = "$CFG->dataroot/filedir/$a/$b/$record";
     }
 
     return $path;
@@ -459,7 +454,7 @@ function smartcertificate_get_issue($course, $user, $smartcertificate, $cm) {
 
 /**
  * This function check is certificate are downloaded or not.
- * return certificateid
+ * return certificateid if certificate is downloaded.
  *
  * @global type $DB
  * @param type $id
@@ -842,9 +837,7 @@ function smartcertificate_types() {
     return $types;
 }
 
-/** fetch linkedin registererd instt
- * .
- */
+// Fetch all avail linkedin registererd instt.
 function smartcertificate_get_linkedin_instt() {
     global $DB;
     $companyname = array();
@@ -853,9 +846,8 @@ function smartcertificate_get_linkedin_instt() {
     foreach ($result as $rec) {
 
         $companyname[$rec->companyname] = $rec->companyname;
-       
     }
-     
+
     return $companyname;
 }
 
