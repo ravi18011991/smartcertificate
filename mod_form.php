@@ -78,10 +78,11 @@ class mod_smartcertificate_mod_form extends moodleform_mod {
             $mform->disabledIf('licensenumber', 'linkedincheckbox', 'notchecked');
             $mform->addHelpButton('licensenumber', 'licensenumber', 'smartcertificate');
         } else {
-
             $mform->addElement('header', 'linkedinoption', get_string('linkedinoption', 'smartcertificate'));
-
-            $mform->addHelpButton('linkedinoption', 'linkedinoption', 'smartcertificate');
+            $mform->addElement('static', 'linkedinsetting', get_string('linkedinsetting', 'smartcertificate'), 
+                html_writer::link(new moodle_url("$CFG->wwwroot/mod/smartcertificate/manage_institution.php"),
+                get_string('linkedinsettinglink', 'smartcertificate')));
+            $mform->addHelpButton('linkedinsetting', 'linkedinsetting', 'smartcertificate');
         }
         // Issue options.
 

@@ -225,7 +225,7 @@ $string['certificationurl_help'] = 'Enter valid certification URL of the website
 $string['licensenumber'] = 'License Number';
 $string['licensenumber_help'] = 'Enter valid license number of your certification course';
 $string['defaultlinklist'] = "Go to setting Page";
-$string['addlinkedin'] = 'ADD Linkedin';
+$string['addlinkedin'] = 'ADD To Linkedin';
 $string['linkedininstruction'] = 'To fill company name And complete URL you must click on the linkedin link given below and must follow the helpbutton of both input field';
 $string['linkedinurl'] = 'https://addtoprofile.linkedin.com/cert';
 $string['delete'] = 'Delete';
@@ -250,5 +250,11 @@ $string['deletednot'] = 'Institute Record is not Deleted';
 $string['deletecheckfullifissued'] = 'Are you absolutely sure you want to completely delete the Institute record because this institute already issued certificates';
 $string['deleteinst'] = 'Delete Institute Record';
 $string['editnotice'] = 'This certificate has been already issued, New changes will not effect over already issued certificates.';
+$string['linkedinsetting'] = 'Linkedin Manage Institution';
+$string['linkedinsetting_help'] = 'This button will take you to a new screen where you will be able to add valid institution which is registered in linkedin';
+$string['linkedinsettinglink'] = 'Linkedin Manage Institution';
+$string['smartcertificate'] = 'Smart Certificate';
+$string['linkdinregisinst'] = 'Linkedin Registerered Instt';
+$string['inststatus'] = 'Soory not found any Linkedin Registered Institute in smart certificate Records,First registererd Linkedindin institute in smart certificate records via linkedin Manage Institution page';
 
 

@@ -41,7 +41,7 @@ $PAGE->set_pagelayout('admin');
 $PAGE->set_context($sitecontext);
 $PAGE->set_title($listoflinkedinregisteredinst);
 $PAGE->set_heading($SITE->fullname);
-$PAGE->navbar->add($manageinstitution);
+$PAGE->navbar->add($manageinstitution, new moodle_url('/mod/smartcertificate/manage_institution.php'));
 $PAGE->navbar->add($listoflinkedinregisteredinst);
 
 echo $OUTPUT->header();
@@ -87,7 +87,11 @@ foreach ($result as $record) {
         array('title' => $strdelete));
     $table->data[] = array($companyname, $registered, $link);
 }
-echo html_writer::table($table);
+if (!empty($result)) {
+    echo html_writer::table($table);
+} else {
+    echo get_string('inststatus', 'smartcertificate');
+}
 
 echo $OUTPUT->footer();
 

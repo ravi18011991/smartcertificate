@@ -42,7 +42,7 @@ $PAGE->navbar->add($manageinstitution);
 $mform = new mod_smartcertificate_manage_institution_form();
 
 if ($mform->is_cancelled()) {
-    redirect(new moodle_url('/admin/settings.php?section=modsettingsmartcertificate'));
+    redirect(new moodle_url('/mod/smartcertificate/manage_institution.php'));
 } else if ($fromform = $mform->get_data()) {
 
     $data = new stdClass();
@@ -65,5 +65,4 @@ echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('manageinstitution', 'smartcertificate'));
 echo get_string('linkedininstruction', 'smartcertificate');
 echo $mform->display();
-echo html_writer::link(new moodle_url('linkedin_registered_inst.php'), get_string('linkedin_registerted_inst', 'smartcertificate'));
 echo $OUTPUT->footer();

@@ -34,8 +34,8 @@ class mod_smartcertificate_manage_institution_form extends moodleform {
     public function definition() {
         global $CFG;
 
-        $mform =& $this->_form;
-        $linkcontent = '<a href="https://addtoprofile.linkedin.com/cert">https://addtoprofile.linkedin.com/cert</a>';
+        $mform = & $this->_form;
+        $linkcontent = '<a href= "https://addtoprofile.linkedin.com/cert" target = "_blank"> https://addtoprofile.linkedin.com/cert </a>';
         $mform->addElement('static', 'linkedinlink', get_string('linkedinlink', 'smartcertificate'), $linkcontent);
         $mform->addHelpButton('linkedinlink', 'linkedinlink', 'smartcertificate');
         $mform->addElement('text', 'companyname', get_string('companyname', 'smartcertificate'));

@@ -23,10 +23,26 @@
  */
 
 defined('MOODLE_INTERNAL') || die;
+$modltifolder = new admin_category('modsmartcertificatefolder', new lang_string('pluginname', 'mod_smartcertificate'), $module->is_enabled() === false);
+$ADMIN->add('modsettings', $modltifolder);
+$settings->hidden = true;
+$ADMIN->add('modsmartcertificatefolder', $settings);
+$ADMIN->add('modsmartcertificatefolder', new admin_externalpage('settingsmartcertificate',
+        get_string('smartcertificate', 'smartcertificate'),
+        new moodle_url("$CFG->wwwroot/admin/settings.php?section=modsettingsmartcertificate")));
+$ADMIN->add('modsmartcertificatefolder', new admin_externalpage('smartcertificatemanage_institution',
+        get_string('linkedinsettinglink', 'smartcertificate'),
+        new moodle_url("$CFG->wwwroot/mod/smartcertificate/manage_institution.php")));
+$ADMIN->add('modsmartcertificatefolder', new admin_externalpage('linkedin_registered_inst',
+        get_string('linkdinregisinst', 'smartcertificate'),
+        new moodle_url("$CFG->wwwroot/mod/smartcertificate/linkedin_registered_inst.php")));
 
+    foreach (core_plugin_manager::instance()->get_plugins_of_type('modsmartcertificate') as $plugin) {
+   
+    $plugin->load_settings($ADMIN, 'modsmartcertificatefolder', $hassiteconfig);
+}
 if ($ADMIN->fulltree) {
-    $settings->add(new mod_smartcertificate_admin_setting_manage_institution('smartcertificate',
-            get_string('manageinstitution', 'mod_smartcertificate'), get_string('manageinstitutiondesc', 'smartcertificate'), ''));
+   
     $settings->add(new mod_smartcertificate_admin_setting_upload('smartcertificate/uploadimage',
         get_string('uploadimage', 'mod_smartcertificate'), get_string('uploadimagedesc', 'smartcertificate'), ''));
 
@@ -35,5 +51,7 @@ if ($ADMIN->fulltree) {
 
     $settings->add(new mod_smartcertificate_admin_setting_font('smartcertificate/fontserif',
         get_string('fontserif', 'mod_smartcertificate'), get_string('fontserif_desc', 'mod_smartcertificate'), 'freeserif'));
-
+   
 }
+$settings = null;
+
