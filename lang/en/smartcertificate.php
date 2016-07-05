@@ -255,6 +255,6 @@ $string['linkedinsetting_help'] = 'This button will take you to a new screen whe
 $string['linkedinsettinglink'] = 'Linkedin Manage Institution';
 $string['smartcertificate'] = 'Smart Certificate';
 $string['linkdinregisinst'] = 'Linkedin Registerered Instt';
-$string['inststatus'] = 'Soory not found any Linkedin Registered Institute in smart certificate Records,First registererd Linkedindin institute in smart certificate records via linkedin Manage Institution page';
+$string['inststatus'] = 'Sorry No Linkedin Registered Institute found in smart certificate Records,First registererd Linkedindin institute in smart certificate records via linkedin Manage Institution page';
 
 

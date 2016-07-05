@@ -75,23 +75,21 @@ $strdelete = get_string('delete');
 $sql = "SELECT * FROM {smartcertificate_linkedin}";
 $result = $DB->get_records_sql($sql);
 $table = new html_table();
-$table->head = array('Company Name', 'Registered Status', 'Delete Instt');
+$table->head = array('Company Name', 'Delete Instt');
 foreach ($result as $record) {
     // Display record.
     $companyname = $record->companyname;
-    $registered = 'Yes';
     $id = $record->id;
     $link = html_writer::link(new moodle_url('/mod/smartcertificate/linkedin_registered_inst.php',
         array('delete' => $id, 'companyname' => $companyname, 'sesskey' => sesskey())),
         html_writer::empty_tag('img', array('src' => $OUTPUT->pix_url('t/delete'), 'alt' => $strdelete, 'class' => 'iconsmall')),
         array('title' => $strdelete));
-    $table->data[] = array($companyname, $registered, $link);
+    $table->data[] = array($companyname, $link);
 }
 if (!empty($result)) {
     echo html_writer::table($table);
 } else {
-    echo get_string('inststatus', 'smartcertificate');
+    echo $OUTPUT->notification(get_string('inststatus', 'smartcertificate'));
 }
-
 echo $OUTPUT->footer();
 

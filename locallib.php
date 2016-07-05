@@ -105,19 +105,13 @@ function smartcertificate_linkedin($smartcertificate, $cm) {
 
     if ($smartcertificate->linkedincheckbox == 1) {
         $companyname = $smartcertificate->selectcompanyname;
-        $result = $DB->get_record_sql('SELECT completeurl FROM {smartcertificate_linkedin} WHERE companyname = :companyname', array('companyname' => $companyname));
+        $result = $DB->get_record_sql('SELECT completeurl FROM {smartcertificate_linkedin} WHERE companyname = :companyname', array('companyname' => "$companyname"));
         if (!empty($result)) {
-            foreach ($result as $record) {
-
-                $completeurl = $record;
-            }
-        }
-        if (!empty($completeurl)) {
             $certificationname = preg_replace("/[\s_]/", "%20", $smartcertificate->certificationname);
             $certificationurl = preg_replace("/[\s_]/", "%2F", $smartcertificate->certificationurl);
             $license = preg_replace("/[\s_]/", "%20", $smartcertificate->licensenumber);
             $linkname = get_string('addlinkedin', 'smartcertificate');
-            $linkedinlink = new moodle_url('https://www.linkedin.com/profile/add' . $completeurl . 'CertificationName' . '=' . $certificationname .
+            $linkedinlink = new moodle_url('https://www.linkedin.com/profile/add' . $result->completeurl . 'CertificationName' . '=' . $certificationname .
             '&pfCertificationUrl' . '=' . $certificationurl . '&pfCertStartDate' .'=' .date("Ym"). '&pfLicenseNo' . '=' . $license . '&pf' . $cm->id);
             $button = new single_button($linkedinlink, $linkname);
             $link = html_writer::tag('div', $OUTPUT->render($button), array('style' => 'text-align:center'));
