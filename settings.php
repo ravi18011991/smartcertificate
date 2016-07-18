@@ -23,13 +23,10 @@
  */
 
 defined('MOODLE_INTERNAL') || die;
+
 $modltifolder = new admin_category('modsmartcertificatefolder', new lang_string('pluginname', 'mod_smartcertificate'), $module->is_enabled() === false);
 $ADMIN->add('modsettings', $modltifolder);
-$settings->hidden = true;
 $ADMIN->add('modsmartcertificatefolder', $settings);
-$ADMIN->add('modsmartcertificatefolder', new admin_externalpage('settingsmartcertificate',
-        get_string('smartcertificate', 'smartcertificate'),
-        new moodle_url("$CFG->wwwroot/admin/settings.php?section=modsettingsmartcertificate")));
 $ADMIN->add('modsmartcertificatefolder', new admin_externalpage('smartcertificatemanage_institution',
         get_string('linkedinsettinglink', 'smartcertificate'),
         new moodle_url("$CFG->wwwroot/mod/smartcertificate/manage_institution.php")));
@@ -42,7 +39,7 @@ $ADMIN->add('modsmartcertificatefolder', new admin_externalpage('linkedin_regist
     $plugin->load_settings($ADMIN, 'modsmartcertificatefolder', $hassiteconfig);
 }
 if ($ADMIN->fulltree) {
-   
+    
     $settings->add(new mod_smartcertificate_admin_setting_upload('smartcertificate/uploadimage',
         get_string('uploadimage', 'mod_smartcertificate'), get_string('uploadimagedesc', 'smartcertificate'), ''));
 

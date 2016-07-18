@@ -22,17 +22,16 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 require('../../config.php');
+require_once($CFG->libdir.'/adminlib.php');
 require_once($CFG->dirroot . '/mod/smartcertificate/locallib.php');
 require_once($CFG->dirroot . '/mod/smartcertificate/manage_institution_form.php');
 $delete = optional_param('delete', 0, PARAM_INT);
-$companyname = optional_param('companyname', '', PARAM_CLEANHTML);
-$confirm      = optional_param('confirm', '', PARAM_ALPHANUM);
+$confirm = optional_param('confirm', '', PARAM_ALPHANUM);
 require_login();
-
+admin_externalpage_setup('linkedin_registered_inst');
 $sitecontext = context_system::instance();
 $site = get_site();
 require_capability('moodle/site:config', $sitecontext);
-
 $listoflinkedinregisteredinst = get_string('listoflinkedin_registered_inst', 'smartcertificate');
 $manageinstitution = get_string('manageinstitution', 'smartcertificate');
 $PAGE->set_url('/admin/settings.php', array('section' => 'modsettingsmartcertificate'));
@@ -47,14 +46,14 @@ $PAGE->navbar->add($listoflinkedinregisteredinst);
 echo $OUTPUT->header();
 $returnurl = new moodle_url('/mod/smartcertificate/linkedin_registered_inst.php');
 
-if ($delete && $companyname and confirm_sesskey()) {
+if ($delete and confirm_sesskey()) {
     require_capability('mod/smartcertificate:delete', $sitecontext);
     // Delete inst record, after confirmation.
-    $result = smartcertificate_check_issued($companyname); // This function check institute is issued certificates or not.
-    if ($confirm != md5($delete) && ($companyname)) {
+    $result = $DB->record_exists('smartcertificate', array('companyid' => $delete)); // This query check institute is issued certificates or not.
+    if ($confirm != md5($delete)) {
         echo $OUTPUT->heading(get_string('deleteinst', 'smartcertificate'));
-        $optionsyes = array('delete' => $delete, 'companyname' => $companyname, 'confirm' => md5($delete), 'sesskey' => sesskey());
-        if (!empty($result)) {
+        $optionsyes = array('delete' => $delete, 'confirm' => md5($delete), 'sesskey' => sesskey());
+        if ($result == TRUE) {
             echo $OUTPUT->confirm(get_string('deletecheckfullifissued', 'smartcertificate'), new moodle_url($returnurl, $optionsyes), $returnurl);
         } else {
             echo $OUTPUT->confirm(get_string('deletecheckfull', 'smartcertificate'), new moodle_url($returnurl, $optionsyes), $returnurl);
@@ -62,7 +61,7 @@ if ($delete && $companyname and confirm_sesskey()) {
         echo $OUTPUT->footer();
         die;
     } else if (data_submitted()) {
-        if (smartcertificate_linkedin_del_instt($delete, $companyname)) {
+        if (smartcertificate_linkedin_del_instt($delete)) {
             \core\session\manager::gc(); // Remove stale sessions.
             redirect($returnurl);
         } else {
@@ -72,8 +71,7 @@ if ($delete && $companyname and confirm_sesskey()) {
     }
 }
 $strdelete = get_string('delete');
-$sql = "SELECT * FROM {smartcertificate_linkedin}";
-$result = $DB->get_records_sql($sql);
+$result = $DB->get_records('smartcertificate_linkedin');
 $table = new html_table();
 $table->head = array('Company Name', 'Delete Instt');
 foreach ($result as $record) {
@@ -81,7 +79,7 @@ foreach ($result as $record) {
     $companyname = $record->companyname;
     $id = $record->id;
     $link = html_writer::link(new moodle_url('/mod/smartcertificate/linkedin_registered_inst.php',
-        array('delete' => $id, 'companyname' => $companyname, 'sesskey' => sesskey())),
+        array('delete' => $id, 'sesskey' => sesskey())),
         html_writer::empty_tag('img', array('src' => $OUTPUT->pix_url('t/delete'), 'alt' => $strdelete, 'class' => 'iconsmall')),
         array('title' => $strdelete));
     $table->data[] = array($companyname, $link);

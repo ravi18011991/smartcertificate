@@ -61,10 +61,10 @@ class mod_smartcertificate_mod_form extends moodleform_mod {
             $mform->addElement('advcheckbox', 'linkedincheckbox', $name);
             $mform->addHelpButton('linkedincheckbox', 'enablecheckbox', 'smartcertificate');
             $mform->setDefault('linkedincheckbox', 0);
-            $mform->addElement('select', 'selectcompanyname', get_string('selectcompanyname', 'smartcertificate'), $comapnyname);
-            $mform->setDefault('selectcompanyname', 0);
-            $mform->disabledIf('selectcompanyname', 'linkedincheckbox', 'notchecked');
-            $mform->addHelpButton('selectcompanyname', 'selectcompanyname', 'smartcertificate');
+            $mform->addElement('select', 'companyid', get_string('companyid', 'smartcertificate'), $comapnyname);
+            $mform->setDefault('companyid', 0);
+            $mform->disabledIf('companyid', 'linkedincheckbox', 'notchecked');
+            $mform->addHelpButton('companyid', 'companyid', 'smartcertificate');
             $mform->addElement('text', 'certificationname', get_string('certificationname', 'smartcertificate'));
             $mform->setType('certificationname', PARAM_CLEANHTML);
             $mform->disabledIf('certificationname', 'linkedincheckbox', 'notchecked');
@@ -221,8 +221,8 @@ class mod_smartcertificate_mod_form extends moodleform_mod {
         $comapnyname = smartcertificate_get_linkedin_instt();
         if (!empty($comapnyname)) {  // Check this condition for prevent errors during installation-if linkedin_instt table is empty.
             if ($data['linkedincheckbox'] == 1) {
-                if ($data['selectcompanyname']) {
-                    if ($data['selectcompanyname']) {
+                if ($data['companyid']) {
+                    if ($data['companyid']) {
                         if (empty($data['certificationname'])) {
                             $errors['certificationname'] = get_string('certificationnamevalidation', 'smartcertificate');
                         }

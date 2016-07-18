@@ -22,11 +22,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 require('../../config.php');
+require_once($CFG->libdir.'/adminlib.php');
 require_once($CFG->dirroot . '/mod/smartcertificate/locallib.php');
 require_once($CFG->dirroot . '/mod/smartcertificate/manage_institution_form.php');
 
 require_login();
-
+admin_externalpage_setup('smartcertificatemanage_institution');
 $context = context_system::instance();
 require_capability('moodle/site:config', $context);
 $manageinstitution = get_string('manageinstitution', 'smartcertificate');
