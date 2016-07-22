@@ -39,7 +39,7 @@ File structure for Smartcertificatesearch would be. [site-root]/admin/tool/smart
 
 3- Visit the admin notification page to trigger the database installation by [site-root] > Site administration > Notifications
 
-How to use Smart Certificate
+How to use Smart Certificate:
 ----------------------------
 
 Administrative Setting of Smart Certificate:
