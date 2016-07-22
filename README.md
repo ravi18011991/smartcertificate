@@ -39,8 +39,8 @@ File structure for Smartcertificatesearch would be. [site-root]/admin/tool/smart
 
 3- Visit the admin notification page to trigger the database installation by [site-root] > Site administration > Notifications
 
-                                How to use Smart Certificate 
-                                ----------------------------
+How to use Smart Certificate
+----------------------------
 
 Administrative Setting of Smart Certificate:
 --------------------------------------------
@@ -75,10 +75,9 @@ Step 6- Copy the company name just you selected in step 2 above, and paste this 
         in setting page of Linkedin Manage Institution of smartcertificate module.
 
 Step 7- Copy the url/content from Complete URL field under heading “Grab your code” at right side in below,and paste this into 
-        “Enter Complete URL” field of Linkedin  Manage Institution of smartcertificate module.
-                                                                                                                                                              ----------------------------      
+        “Enter Complete URL” field of Linkedin  Manage Institution of smartcertificate module.                       
 Note :
-.....
+----
 Particular institute provides the facility to share various course certification certificate on user’s linkedin profile. 
 Now you are ready to use linkedin feature of smart certificate.
 
