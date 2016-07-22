@@ -9,11 +9,14 @@ You should have received a copy of the GNU General Public License along with thi
 Description
 -----------
 
-The Smart Certificate module is used to generate PDF certificates for students in a course.Smart certificate consist of borders, watermarks, seals, signatures, outcomes, grades etc
-to create effective certificate.Smart Certificate contain contents like -grade, signature, outcomes, border, seals etc that doesn’t change again after the first download of certificate.
-In case mistakes are found in student certificate then students can request Administrator to allow them download latest updated certificate.
-Smart Certifificate allow user to share certificate on their linkedin profile by just clicking the ‘Add Linkedin’ Button.
- 
+Smart Certificate module is used to generate PDF certificates for student in a course.
+
+Smart Certificate has grade, signature, outcomes, border, seals etc that would not change after the first download of certificate. 
+If mistakes are found in student certificate then students can request to administrator(by message, chat, phone etc) 
+to allow them for download latest updated certificate. Smart Certificate allow user to share certificate on their linkedin profile by just clicking the ‘Add Linkedin’ Button.
+
+Its various attributes like  borders, watermarks, seals, signatures, outcomes, grades etc make smart certificate more effective.
+
 Requirements
 ------------
 
@@ -36,6 +39,9 @@ File structure for Smartcertificatesearch would be. [site-root]/admin/tool/smart
 
 3- Visit the admin notification page to trigger the database installation by [site-root] > Site administration > Notifications
 
+                                How to use Smart Certificate 
+                                ----------------------------
+
 Administrative Setting of Smart Certificate:
 --------------------------------------------
 
@@ -45,46 +51,48 @@ go to  Site Administration -> Plugins -> Activity Modules -> Smart certificate. 
 
 1. Smart Certificate:
 ---------------------
-    Smart certificate setting provide facility to user to select font and certificate border according to himself.
+Smart certificate setting provide facility to user to select font and certificate border according to himself.
 	            
 2. Linkedin Manage Institution:
 ------------------------------- 
-    User can use linkedin functionality as per their choice because it is optional. For using linkedin functionality follow the below given description.      
+User can use linkedin functionality as per their choice because it is optional. For using linkedin functionality follow the below given description.      
 
-    In manage institution page we can see one “Linkedin Link” and two field namely-”Enter Company Name” and “Enter Complete URL” . 
-    Linkedin link is only helpful for fill company name and complete url.Follow the given steps below to fill manage Institution’s input boxes.
+In manage institution page we can see one “Linkedin Link” and two field namely-”Enter Company Name” and “Enter Complete URL” . 
+Linkedin link is only helpful for fill company name and complete url.Follow the given steps below to fill manage Institution’s input boxes.
 
-    Step 1- First Click on given "https://addtoprofile.linkedin.com/cert" Linkedin Link.
+Step 1- First Click on given "https://addtoprofile.linkedin.com/cert" Linkedin Link.
 
-    Step 2- You need to enter the registered company name, If you have already registered company/institute in linkedin account,
-            just type your company name in first input box which shows your company in drop down list, just select your company from this list.
+Step 2- You need to enter the registered company name, If you have already registered company/institute in linkedin account,
+        just type your company name in first input box which shows your company in drop down list, just select your company from this list.
 
-    Step 3- Enter Certification name in field “Certification name” second input box.
+Step 3- Enter Certification name in field “Certification name” second input box.
 
-    Step 4- Now click on ‘Create Button’
+Step 4- Now click on ‘Create Button’
 
-    Step 5- After clicking the 'Create button',you can see three input boxes at right side under heading “Grab your code”.
+Step 5- After clicking the 'Create button',you can see three input boxes at right side under heading “Grab your code”.
 
-    Step 6- Copy the company name just you selected in step 2 above, and paste this into field “Enter Company Name” 
-            in setting page of Linkedin Manage Institution of smartcertificate module.
-                                                                                                                                                           
-    Step 7- Copy the url/content from Complete URL field under heading “Grab your code” at right side in below,and paste this into 
-            “Enter Complete URL” field of Linkedin  Manage Institution of smartcertificate module.
-                                                                                                                                                                  ----------------------------      
+Step 6- Copy the company name just you selected in step 2 above, and paste this into field “Enter Company Name” 
+        in setting page of Linkedin Manage Institution of smartcertificate module.
+
+Step 7- Copy the url/content from Complete URL field under heading “Grab your code” at right side in below,and paste this into 
+        “Enter Complete URL” field of Linkedin  Manage Institution of smartcertificate module.
+                                                                                                                                                              ----------------------------      
 Note :
 .....
-Particular institute provides the facility to share various course certification certificate on user’s linkedin profile. Now you are ready to use linkedin feature of smart certificate.
+Particular institute provides the facility to share various course certification certificate on user’s linkedin profile. 
+Now you are ready to use linkedin feature of smart certificate.
 
 3. Linkedin Registered Instt:
 -----------------------------
-    Linkedin Registered instt setting provide facility to user to see all linkedin registered Institute which are in 
-    smart certificate records and user can delete any institute from Smart Certificate records.  
+Linkedin Registered instt setting provide facility to user to see all linkedin registered Institute which are in 
+smart certificate records and user can delete any institute from Smart Certificate records.  
 
 Smart Certificate Setting:
-.........................
+-------------------------
 Smart Certificate Administration:
-............................... 
-Go to the course where you want the Smart Certificate and turn editing On. In the section you want the Smart Certificate, click 'Add an activity or resource' and select and add Smart Certificate.
+---------------------------------
+Go to the course where you want the Smart Certificate and turn editing On. In the section you want the Smart Certificate, 
+click 'Add an activity or resource' and select and add Smart Certificate.
 
 General->
 ----------
