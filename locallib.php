@@ -114,6 +114,7 @@ function smartcertificate_linkedin($smartcertificate, $cm) {
             $linkedinlink = new moodle_url('https://www.linkedin.com/profile/add' . $completeurl . 'CertificationName' . '=' . $certificationname .
             '&pfCertificationUrl' . '=' . $certificationurl . '&pfCertStartDate' .'=' .date("Ym"). '&pfLicenseNo' . '=' . $license . '&pf' . $cm->id);
             $button = new single_button($linkedinlink, $linkname);
+            //$button->add_action(new popup_action('click', $linkedinlink, 'view', array('height' => 900, 'width' => 1400)));
             $link = html_writer::tag('div', $OUTPUT->render($button), array('style' => 'text-align:center'));
             return $link;
         }
